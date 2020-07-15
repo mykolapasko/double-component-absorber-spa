@@ -1,0 +1,26 @@
+<div class="jumbotron"
+	id="section-jumb">
+    <p class="text-center">Height section</p>
+</div>
+<form class="navbar-form navbar-left" novalidate>
+	<div class="form-group">
+		<input placeholder="Banch" 
+		class="form-control"
+		ng-model="$ctrl.banch"
+		type="number"
+		ng-pattern="/^[0-9][^\.]*$/"
+		ng-min="1"
+		ng-max="99"
+		required>
+	</div>
+	<button  class="btn btn-success"
+			ng-disabled="!$ctrl.banch" 
+			ng-click="$ctrl.goToHeightItems();">Find</button>
+</form>
+<div class="container">
+	<div class="row-content">
+		<div class="col-sm-12">
+			<div ui-view ></div>
+		</div>
+	</div>
+</div>

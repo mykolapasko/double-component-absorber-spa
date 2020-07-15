@@ -1,0 +1,63 @@
+<div class="jumbotron"
+  id="section-jumb">
+   <p class="text-center">Titanate height controll</p>
+</div>
+<h4>Current banch: {{$ctrl.currentBanch}}, clad: {{$ctrl.currentClad}}</h4>
+<div class="row">
+  <div class="col-xs-12">
+    <form>
+      <label>
+        <input type="radio" ng-model="value" value="41.5" ng-change="$ctrl.newValue(value, item)">
+        41.5
+      </label>
+      <label>
+        <input type="radio" ng-model="value" value="41.6" ng-change="$ctrl.newValue(value, item)">
+        41.6
+      </label>
+      <label>
+        <input type="radio" ng-model="value" value="41.7" ng-change="$ctrl.newValue(value, item)">
+        41.7
+      </label>
+      <label>
+        <input type="radio" ng-model="value" value="41.8" ng-change="$ctrl.newValue(value, item)">
+        41.8
+      </label>
+      <label>
+        <input type="radio" ng-model="value" value="41.9" ng-change="$ctrl.newValue(value, item)">
+        41.9
+      </label>
+      <label>
+        <input type="radio" ng-model="value" value="42.0" ng-change="$ctrl.newValue(value, item)">
+        42.0
+      </label>
+      <label>
+        <input type="radio" ng-model="value" value="42.1" ng-change="$ctrl.newValue(value, item)">
+        42.1
+      </label>
+      <label>
+        <input type="radio" ng-model="value" value="42.2" ng-change="$ctrl.newValue(value, item)">
+        42.2
+      </label>
+      <label>
+        <input type="radio" ng-model="value" value="42.3" ng-change="$ctrl.newValue(value, item)">
+        42.3
+      </label>
+      <label>
+        <input type="radio" ng-model="value" value="42.4" ng-change="$ctrl.newValue(value, item)">
+        42.4
+      </label>
+      <label>
+        <input type="radio" ng-model="value" value="42.5" ng-change="$ctrl.newValue(value, item)">
+        42.5
+      </label>
+      <button class="btn btn-success"
+                ng-if="$ctrl.item.data.actTitanateHgt"
+                ng-click="$ctrl.putTitanateData();">
+                Go to boron height
+      </button>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <h4>Actual titanate height: {{$ctrl.item.data.actTitanateHgt}} mm</h4>
+</div>

@@ -1,0 +1,252 @@
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+
+body {
+  padding-top: 70px;
+}
+
+h1 {
+  padding-top: 15px;
+}
+
+footer {
+  padding-top: 10px;
+  background-color: #101010;
+  height: 40px;
+  color: #9d9d9d;
+  opacity: 0.89;
+}
+
+#section-jumb {
+  height: 100px;
+  padding: 40px;
+}
+
+/*/turn-off-number-input-spinners*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+#item {
+  background-color: #999999;
+  margin: 15px;
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+/*  padding: 15px;*/
+  height: 75px;
+}
+
+#diameter {
+  padding-top: 19px;
+}
+
+input.ng-pristine {
+  border-color:yellow;
+}
+
+input.ng-touched.ng-invalid {
+  border-color:red;
+}
+
+input.ng-touched.ng-valid {
+  border-color:green;
+}
+
+
+.sortorder:after {
+  content: '\25b2';   /*BLACK UP-POINTING TRIANGLE*/
+}
+.sortorder.reverse:after {
+  content: '\25bc';   /*BLACK DOWN-POINTING TRIANGLE*/
+}
+
+.item-weight {
+  background-color: #999999;
+  margin: 15px;
+  border-radius: 20px;
+  border: 1px solid black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  height: 125px;
+}
+
+.item-weight-yellow {
+  background-color: #FFFF66;
+  margin: 15px;
+  border-radius: 20px;
+  border: 1px solid black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  height: 125px;
+}
+
+.vertical-align {
+  padding-top: 35px;
+}
+
+.out-item {
+  background-color: #999999;
+  margin: 5px;
+  border-radius: 20px;
+  border: 1px solid black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  padding: 5px;
+  height: 150px;
+}
+
+.out-item h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.out-item-yellow h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.out-item-yellow {
+  background-color: #FFFF66;
+  margin: 5px;
+  border-radius: 20px;
+  border: 1px solid black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  padding: 5px;
+  height: 150px;
+}
+
+
+.height-item {
+  background-color: #999999;
+  border-radius: 20px;
+  border: 0.5px solid black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  margin-top: 20px;
+}
+
+.height-item h3 {
+  padding-top: 0px;
+  margin-top: 0px;
+  height: 60px;
+}
+
+.package-item {
+  background-color: #999999;
+  margin: 5px;
+  border-radius: 20px;
+  border: 1px solid black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  padding: 5px;
+  height: 125px;
+}
+
+#package-item button {
+  margin-left: 25px;
+}
+
+.agent-item {
+  height: 80px;
+  width: 80px;
+  background-color: #28a745;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.agent-item-filled {
+  height: 80px;
+  width: 80px;
+  background-color: #dc3545;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.stamp-item {
+  background-color: #999999;
+  margin: 5px;
+  border-radius: 20px;
+  border: 1px solid black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  padding-top: 12px;
+  height: 110px;
+  cursor: pointer;
+}
+
+.blue-deck {
+  border: 10px solid #1E90FF;
+  border-radius: 30px;
+}
+
+.yellow-deck {
+  border: 10px solid #ffc107;
+  border-radius: 30px;
+}
+
+#deck {
+  margin-top: 20px;
+}
+
+#agent {
+  text-decoration: none;
+  color: black;
+}
+
+.banch-item {
+  background-color: #999999;
+  margin: 5px;
+  border-radius: 20px;
+  border: 1px solid black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  padding: 5px;
+  height: 125px;
+}
+
+.banch-item button {
+  margin-left: 25px;
+}
+
+.text-input-button-card {
+  background-color: #999999;
+  margin: 5px;
+  border-radius: 20px;
+  border: 1px solid black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  padding: 5px;
+  height: 170px;
+}
+
+.text-input-button-card input {
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+.text-input-button-card button {
+  margin-left: 10px;
+}
+
+.loading-indicator {
+    display: block;
+    width: 70px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 40%;
+    z-index: 100;
+    background-color: #FFF;
+}
+
+.loading-indicator img {
+    width: 70px;
+    background-color: #FFF;
+}

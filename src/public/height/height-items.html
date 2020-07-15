@@ -1,0 +1,10 @@
+<h3>Height Controll Module</h3>
+<h3>Current banch: {{$ctrl.currentBanch}}</h3>
+<div class="row">
+  <div class="col-sm-2" ng-repeat="item in $ctrl.items">
+    <div class="stamp-item" ng-click="$ctrl.goToTitanateDetails(item)">
+      <h2 class="text-center">{{item.clad}} / {{item.diameterAvg}}</h2>
+    </div>
+  </div>
+</div>
+<div ui-view ></div>

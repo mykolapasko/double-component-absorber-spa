@@ -1,0 +1,39 @@
+<div class="jumbotron"
+	id="section-jumb">
+   <p class="text-center">Nozzle section</p>
+</div>
+<div class="container">
+	<div class="row-content">
+		<div class="col-sm-6">
+			<form class="navbar-form navbar-left" novalidate>
+				<div class="form-group">
+					<input placeholder="Banch" 
+						class="form-control"
+						ng-model="$ctrl.banch"
+						type="number"
+						ng-pattern="/^[0-9][^\.]*$/"
+						ng-min="1"
+						ng-max="99"
+						required>
+				</div>
+				<button 
+					class="btn btn-warning"
+			        ng-click="$ctrl.goToNozzleItems();">
+			        Search
+			    </button>
+			</form>
+		</div>
+		<div class="col-sm-6">
+			<div class="row-content">
+				<div class="col-sm-6">
+					<h3 class="text-center">Banch: {{$ctrl.banch}}</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div ui-view></div>
+	</div>
+</div>

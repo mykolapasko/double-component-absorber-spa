@@ -1,0 +1,37 @@
+<div class="jumbotron"
+  id="section-jumb">
+   <p class="text-center">Clad depth and weight controll module</p>
+</div>
+<h4>Current banch: {{$ctrl.currentBanch}}, clad: {{$ctrl.currentClad}}</h4>
+<div class="row">
+  <div class="col-xs-12">
+    <form>
+      <label>
+        <input type="radio" ng-model="value" value="4095" ng-change="$ctrl.newValue(value)">
+        0
+      </label>
+      <label>
+        <input type="radio" ng-model="value" value="4096" ng-change="$ctrl.newValue(value)">
+        + 1
+      </label>
+      <label>
+        <input type="radio" ng-model="value" value="4097" ng-change="$ctrl.newValue(value)">
+        + 2 
+      </label>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <h4>Actual clad depth: {{$ctrl.item.data.cladDepth}} mm</h4>
+  <button class="btn btn-success"
+            ng-if="$ctrl.item.data.cladDepth"
+            ng-click="$ctrl.getCladWeight($ctrl.item);">
+            Get clad weight
+  </button>
+  <h4>Actual clad weight: {{$ctrl.item.data.cladWgt}} g</h4>
+  <button class="btn btn-danger"
+            ng-if="$ctrl.item.data.cladWgt"
+            ng-click="$ctrl.putCladData($ctrl.item);">
+            Save data
+  </button>
+</div>

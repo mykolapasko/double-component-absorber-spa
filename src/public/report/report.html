@@ -1,0 +1,83 @@
+<div class="jumbotron"
+	id="section-jumb">
+   <p class="text-center">total: {{repCtrl.countItems}}</p>
+</div>
+<div class="container">
+	<div class="row-content">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>
+						<button ng-click="repCtrl.sortBy('stamp')">stamp</button>
+						<span class="sortorder" ng-show="repCtrl.propertyName === 'stamp'" ng-class="{reverse: repCtrl.reverse}"></span> 
+					</th>
+					<th>
+						<button ng-click="repCtrl.sortBy('banch')">banch</button>
+						<span class="sortorder" ng-show="repCtrl.propertyName === 'banch'" ng-class="{reverse: repCtrl.reverse}"></span>
+					</th>
+					<th>
+						<button ng-click="repCtrl.sortBy('pipe')">pipe</button>
+						<span class="sortorder" ng-show="repCtrl.propertyName === 'pipe'" ng-class="{reverse: repCtrl.reverse}"></span> 
+					</th>
+					<th>
+						<button ng-click="repCtrl.sortBy('diameter_one')">D 1</button>
+						<span class="sortorder" ng-show="repCtrl.propertyName === 'diameter_one'" ng-class="{reverse: repCtrl.reverse}"></span> 
+					</th>
+					<th>
+						<button ng-click="repCtrl.sortBy('diameter_two')">D 2</button>
+						<span class="sortorder" ng-show="repCtrl.propertyName === 'diameter_two'" ng-class="{reverse: repCtrl.reverse}"></span> 
+					</th>
+					<th>
+						<button ng-click="repCtrl.sortBy('diameter_three')">D 3</button>
+						<span class="sortorder" ng-show="repCtrl.propertyName === 'diameter_three'" ng-class="{reverse: repCtrl.reverse}"></span> 
+					</th>
+					<th>
+						<button ng-click="repCtrl.sortBy('diameter_four')">D 4</button>
+						<span class="sortorder" ng-show="repCtrl.propertyName === 'diameter_four'" ng-class="{reverse: repCtrl.reverse}"></span> 
+					</th>
+					<th>
+						<button ng-click="repCtrl.sortBy('diameter_avg')">D avg</button>
+						<span class="sortorder" ng-show="repCtrl.propertyName === 'diameter_avg'" ng-class="{reverse: repCtrl.reverse}"></span> 
+					</th>
+					<th >
+						<button ng-click="repCtrl.sortBy('updatedAt')">updatedAt</button>
+						<span class="sortorder" ng-show="repCtrl.propertyName === 'updatedAt'" ng-class="{reverse: repCtrl.reverse}"></span> 
+					</th>
+					<th>
+						<button ng-click="repCtrl.sortBy('status')">status</button>
+						<span class="sortorder" ng-show="repCtrl.propertyName === 'status'" ng-class="{reverse: repCtrl.reverse}"></span> 
+					</th>
+					<th>
+						<button ng-click="repCtrl.sortBy('container')">container</button>
+						<span class="sortorder" ng-show="repCtrl.propertyName === 'container'" ng-class="{reverse: repCtrl.reverse}"></span> 
+					</th>
+					<th>
+						<button ng-click="repCtrl.sortBy('nozzle')">nozzle</button>
+						<span class="sortorder" ng-show="repCtrl.propertyName === 'nozzle'" ng-class="{reverse: repCtrl.reverse}"></span> 
+					</th>
+					<th>
+						<button ng-click="repCtrl.sortBy('serial')">serial</button>
+						<span class="sortorder" ng-show="repCtrl.propertyName === 'serial'" ng-class="{reverse: repCtrl.reverse}"></span> 
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in repCtrl.items">
+					<td>{{item.stamp}}</td>
+					<td>{{item.banch}}</td>
+					<td>{{item.clad}}</td>
+					<td>{{item.diameterOne}}</td>
+					<td>{{item.diameterTwo}}</td>
+					<td>{{item.diameterThree}}</td>
+					<td>{{item.diameterFour}}</td>
+					<td>{{item.diameterAvg}}</td>
+					<td>{{item.updatedAt | date:"dd/MM/yyyy"}}</td>
+					<td>{{item.status[0]}}</td>
+					<td>{{item.container}}</td>
+					<td>{{item.nozzle}}</td>
+					<td>{{item.serial}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
