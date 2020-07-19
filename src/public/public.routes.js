@@ -90,6 +90,39 @@ function routeConfig ($stateProvider) {
         }]
       }
     })
+    .state('public.density', {
+      url: '/density',
+      component: 'density',
+      params: {
+        banch: null,
+        itemId: null,
+        itemClad: null
+      }
+    })
+    .state('public.density.items', {
+      views: {
+        '@': {
+          component: 'densityItems',
+        }
+      },
+      resolve: {
+        items: ['DataService', '$transition$', function (DataService, $transition$) {
+          return DataService.getItemsToDensity($transition$.params().banch);
+        }]
+      }
+    })
+    .state('public.density.details', {
+      views: {
+        '@': {
+          component: 'weightDetails'
+        }
+      },
+      resolve: {
+        item: ['DataService', '$transition$', function (DataService, $transition$) {
+          return DataService.getItem($transition$.params().itemId);
+        }]
+      }
+    })
     .state('public.height', {
       url: '/height',
       component: 'height',
