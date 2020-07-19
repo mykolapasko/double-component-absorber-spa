@@ -16,8 +16,6 @@ NozzleDetailsComponent.$inject = ['DataService', '$state'];
 function NozzleDetailsComponent (DataService, $state) {
 
   this.$onInit = function() {
-    console.log("item: ", this.item);
-    console.log("$state: ", $state.params);
     this.nozzle = '';
     this.item.data = {};
   }

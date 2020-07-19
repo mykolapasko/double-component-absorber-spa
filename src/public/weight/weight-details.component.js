@@ -12,8 +12,8 @@ angular.module('public')
 });
 
 //Component controller start
-WeightDetailsComponentController.$inject = ['$state', 'DataService'];
-function WeightDetailsComponentController ($state, DataService) {
+WeightDetailsComponentController.$inject = ['$state', 'DataService', 'CalculationService'];
+function WeightDetailsComponentController ($state, DataService, CalculationService) {
 
   this.$onInit = function() {
     this.currentBanch = $state.params.banch;
@@ -36,8 +36,15 @@ function WeightDetailsComponentController ($state, DataService) {
   this.putCladData = function(item) {
     DataService.putInfo(item)
     .then(function(response) {
-      console.log(response);
+      if (response.data.cladDepth && response.data.cladWgt) {
+        $state.go('public.weight.items', {"banch": $state.params.banch});
+      }
     });
+  }
+
+  this.getFakeCladWeight = function(item) {
+    var weight = parseFloat(CalculationService.getRandomArbitrary(495, 505).toPrecision(4));
+    item.data.cladWgt = weight;
   }
 
 

@@ -23,11 +23,22 @@
 </div>
 <div class="row">
   <h4>Actual clad depth: {{$ctrl.item.data.cladDepth}} mm</h4>
-  <button class="btn btn-success"
+  <!-- This button shouold be uncomment in a case of using real device -->
+  <!-- <button class="btn btn-success"
             ng-if="$ctrl.item.data.cladDepth"
             ng-click="$ctrl.getCladWeight($ctrl.item);">
             Get clad weight
+  </button> -->
+
+  <!-- This button shouold be uncomment in a case of development -->
+  <button class="btn btn-success"
+            ng-if="$ctrl.item.data.cladDepth"
+            ng-click="$ctrl.getFakeCladWeight($ctrl.item);">
+            Get clad weight
   </button>
+
+
+
   <h4>Actual clad weight: {{$ctrl.item.data.cladWgt}} g</h4>
   <button class="btn btn-danger"
             ng-if="$ctrl.item.data.cladWgt"

@@ -16,7 +16,6 @@ NozzleItemsController.$inject = ['DataService', '$state'];
 function NozzleItemsController (DataService, $state) {
 
   this.$onInit = function() {
-  	console.log("items: ", this.items);
   }
 
   this.goToItemDetails = function(item) {

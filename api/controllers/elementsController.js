@@ -32,7 +32,7 @@ exports.read_an_element = function(req, res) {
 };
 
 exports.update_an_element = function(req, res) {
-  Element.findOneAndUpdate({_id:req.params.elementId}, req.body, {new: true}, function(err, element) {
+  Element.findOneAndUpdate({_id:req.params.elementId}, req.body, {new: true, useFindAndModify: false}, function(err, element) {
     if (err)
       res.send(err);
     res.json(element);

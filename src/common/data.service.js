@@ -105,7 +105,6 @@ function DataService($http, $rootScope, ApiPath) {
 // Nozzle start
 
   service.getItemsToNozzle = function (banch) {
-    console.log("Nozzle service call");
     var response = $http({
       method: "GET",
       url: (ApiPath + "/elements")
@@ -130,7 +129,7 @@ function DataService($http, $rootScope, ApiPath) {
       url:(ApiPath + "/elements")
     }).then(function(response) {
       var filteredArray = response.data.filter(function(element) {
-        return element.banch === parseInt(searchTerm) && element.status[0] === 'pending';
+        return element.banch === parseInt(searchTerm) && !element.cladWgt;
       });
       return filteredArray;
     }).then(function(response) {
