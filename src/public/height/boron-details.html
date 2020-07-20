@@ -2,19 +2,15 @@
   id="section-jumb">
    <p class="text-center">Boron carbide height controll</p>
 </div>
-<h4>Current banch: {{$ctrl.currentBanch}}, clad: {{$ctrl.currentClad}}</h4>
+<h4>Current banch: {{$ctrl.currentBanch}}, clad: {{$ctrl.currentClad}}, cladDepth: {{$ctrl.item.cladDepth}}</h4>
 <div class="row">
   <div class="col-xs-12">
     <form>
-      <label>
-        <input type="radio" ng-model="value" value="58.2" ng-change="$ctrl.newValue(value, item)">
-        58.2
+      <label ng-repeat = "n in $ctrl.values">
+        <input type="radio" name= "value" ng-model="$parent.value" ng-value="n" ng-change="$ctrl.newValue(value, item)">
+        {{n}}<span class="radio-width"></span>
       </label>
-      <label>
-        <input type="radio" ng-model="value" value="58.3" ng-change="$ctrl.newValue(value, item)">
-        58.3
-      </label>
-      <label>
+      <!-- <label>
         <input type="radio" ng-model="value" value="58.4" ng-change="$ctrl.newValue(value, item)">
         58.4
       </label>
@@ -41,15 +37,7 @@
       <label>
         <input type="radio" ng-model="value" value="59.0" ng-change="$ctrl.newValue(value, item)">
         59.0
-      </label>
-      <label>
-        <input type="radio" ng-model="value" value="59.1" ng-change="$ctrl.newValue(value, item)">
-        59.1
-      </label>
-      <label>
-        <input type="radio" ng-model="value" value="59.2" ng-change="$ctrl.newValue(value, item)">
-        59.2
-      </label>
+      </label> -->
       <button class="btn btn-success"
                 ng-if="$ctrl.item.data.actBoronHgt"
                 ng-click="$ctrl.putBoronData();">

@@ -12,8 +12,8 @@ angular.module('public')
 });
 
 //Component controller start
-FoundItemsComponentController.$inject = ['$scope', 'DataService', '$rootScope', 'ExpTitanateDensity', 'ExpBoronDensity', 'ExpTitanateHgt', 'ExpBoronHgt', 'CladDepth'];
-function FoundItemsComponentController ($scope, DataService, $rootScope, ExpTitanateDensity, ExpBoronDensity, ExpTitanateHgt, ExpBoronHgt, CladDepth) {
+FoundItemsComponentController.$inject = ['$scope', 'DataService', '$rootScope', 'ExpTitanateDensity', 'ExpBoronDensity', 'ExpTitanateHgt', 'ExpBoronHgt'];
+function FoundItemsComponentController ($scope, DataService, $rootScope, ExpTitanateDensity, ExpBoronDensity, ExpTitanateHgt, ExpBoronHgt) {
   var $ctrl = this;
 
   $scope.$on('item_created', function(event, obj) {
@@ -28,8 +28,6 @@ function FoundItemsComponentController ($scope, DataService, $rootScope, ExpTita
     item.data.nozzleAvg = Math.round(((parseFloat(item.data.diameterThree) + parseFloat(item.data.diameterFour))/2).toPrecision(4)*100)/100;
     item.data.expBoronWgt = parseFloat(((ExpBoronHgt * ExpBoronDensity * 3.14 * (item.data.diameterAvg * item.data.diameterAvg)/4)/1000).toPrecision(4));
     item.data.expTitanateWgt = parseFloat(((ExpTitanateHgt * ExpTitanateDensity * 3.14 * (item.data.diameterAvg * item.data.diameterAvg)/4)/1000).toPrecision(3));
-    item.data.cladDepth = CladDepth;
-    console.log(item.data);
     var promise = DataService.putInfo(item)
     .then($ctrl.remove(index));
   }

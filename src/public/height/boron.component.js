@@ -12,17 +12,18 @@ angular.module('public')
 });
 
 //Component controller start
-BoronDetailsComponent.$inject = ['DataService', '$state', 'CladDepth', 'ButtSpace'];
-function BoronDetailsComponent (DataService, $state, CladDepth, ButtSpace) {
+BoronDetailsComponent.$inject = ['DataService', '$state', 'ButtSpace'];
+function BoronDetailsComponent (DataService, $state, ButtSpace) {
 
   this.$onInit = function() {
     this.currentBanch = $state.params.banch;
     this.currentClad = $state.params.itemClad;
     this.item.data = {};
+    this.values = [58.4, 58.5, 58.6, 58.7, 58.8, 58.9, parseFloat(59).toPrecision(3)]
   }
 
   this.newValue = function(value, item) {
-    this.item.data.actBoronHgt = parseFloat(CladDepth - this.item.actTitanateHgt - parseFloat(value * 10));
+    this.item.data.actBoronHgt = parseFloat(this.item.cladDepth - this.item.actTitanateHgt - parseFloat(value * 10));
   }
 
   this.putBoronData = function() {

@@ -250,3 +250,8 @@ input.ng-touched.ng-valid {
     width: 70px;
     background-color: #FFF;
 }
+
+.radio-width {
+  float: left;
+  width: 20px;
+}

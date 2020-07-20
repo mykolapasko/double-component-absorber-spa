@@ -178,7 +178,7 @@ function DataService($http, $rootScope, ApiPath) {
       url:(ApiPath + "/elements")
     }).then(function(response) {
       var filteredArray = response.data.filter(function(element) {
-        return element.banch === parseInt(searchTerm) && !(element.actBoronHgt && element.actTitanateHgt);
+        return element.banch === parseInt(searchTerm) && element.cladWgt && !element.actBoronHgt;
       });
       return filteredArray;
     }).then(function(response) {
