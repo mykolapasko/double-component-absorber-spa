@@ -43,7 +43,7 @@ function WeightDetailsComponentController ($state, DataService, CalculationServi
   }
 
   this.getFakeCladWeight = function(item) {
-    var weight = parseFloat(CalculationService.getRandomArbitrary(495, 505).toPrecision(4));
+    var weight = parseFloat(CalculationService.getRandomArbitrary(436, 495).toPrecision(4));
     item.data.cladWgt = weight;
   }
 

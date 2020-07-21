@@ -95,8 +95,7 @@ function routeConfig ($stateProvider) {
       component: 'density',
       params: {
         banch: null,
-        itemId: null,
-        itemClad: null
+        itemId: null
       }
     })
     .state('public.density.items', {
@@ -111,10 +110,10 @@ function routeConfig ($stateProvider) {
         }]
       }
     })
-    .state('public.density.details', {
+    .state('public.density.titanate', {
       views: {
         '@': {
-          component: 'weightDetails'
+          component: 'titanateDensity'
         }
       },
       resolve: {

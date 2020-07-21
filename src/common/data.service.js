@@ -200,6 +200,21 @@ function DataService($http, $rootScope, ApiPath) {
 
 //Height end
 
+//Density module services 
+
+service.getItemsToDensity = function(banch) {
+  console.log("Call");
+  return $http({
+    method: "GET",
+    url: (ApiPath + "/elements")
+  }).then(function(response) {
+    var filteredArray = response.data.filter(function(item) {
+      return item.banch === parseInt(banch) && (item.cladWgt || item.cladDepth);
+    });
+    return filteredArray;
+  })
+}
+
 
 // Out Controll start
 
@@ -208,7 +223,6 @@ service.getItemsToOutControll = function (searchTerm) {
       method: "GET",
       url:(ApiPath + "/elements")
     }).then(function(response) {
-      console.log(response);
       var filteredArray = response.data.filter(function(element) {
         return element.banch === parseInt(searchTerm) && !element.container;
       });

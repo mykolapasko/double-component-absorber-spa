@@ -70,7 +70,8 @@ input.ng-touched.ng-valid {
 }
 
 .item-weight {
-  background-color: #999999;
+  padding: 10px;
+  background-color: #EEE;
   margin: 15px;
   border-radius: 20px;
   border: 1px solid black;
