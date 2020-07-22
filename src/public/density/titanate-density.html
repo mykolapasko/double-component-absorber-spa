@@ -15,21 +15,21 @@
           <h4>expTitanateDensity: {{$ctrl.expTitanateDensity}}</h4>
         </div>
         <div class="col-sm-3">
-          <h4>actTitanateHgt: {{$ctrl.item.actTitanateHgt}}</h4>
-          <h4>actTitanateWgt: {{$ctrl.item.actTitanateWgt}}</h4>
-          <h4>actTitanateDensity: {{$ctrl.item.actTitanateWgt}} </h4>
+          <h4>actTitanateHgt: {{$ctrl.item.data.actTitanateHgt}}</h4>
+          <h4>actTitanateWgt: {{$ctrl.item.data.actTitanateWgt}}</h4>
+          <h4>actTitanateDensity: {{$ctrl.item.data.actTitanateDensity}} </h4>
         </div>
         <div class="col-sm-4">
           <div class="vertical-align">
-            <button class="btn btn-success"
-                ng-click="$ctrl.getElementWeight(item, $index);">
-                Weight
-            </button> 
-            <button class="btn btn-info"
-                ng-if="item.data.absorber_weight"
-                ng-click="$ctrl.getElementHight(item, $index);">
+             <button class="btn btn-info"
+                ng-click="$ctrl.getActTitanateHgt($ctrl.item);">
                 Hight
             </button>
+            <button class="btn btn-success"
+                ng-if="$ctrl.item.data.actTitanateHgt"
+                ng-click="$ctrl.getFakeTitanateWgt($ctrl.item);">
+                Weight
+            </button> 
             <button class="btn btn-danger"
                 type="button"
                 ng-if="item.data.actual_absorber_density"

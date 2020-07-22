@@ -9,7 +9,7 @@ function ReportController(items, $filter) {
   var repCtrl = this;
 
   repCtrl.$onInit = function() {
-    repCtrl.propertyName = 'pipe';
+    repCtrl.propertyName = 'clad';
     repCtrl.reverse = true;
     repCtrl.countItems = items.length;
 
