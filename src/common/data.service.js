@@ -203,13 +203,12 @@ function DataService($http, $rootScope, ApiPath) {
 //Density module services 
 
 service.getItemsToDensity = function(banch) {
-  console.log("Call");
   return $http({
     method: "GET",
     url: (ApiPath + "/elements")
   }).then(function(response) {
     var filteredArray = response.data.filter(function(item) {
-      return item.banch === parseInt(banch) && (item.cladWgt || item.cladDepth);
+      return item.banch === parseInt(banch) && (item.cladWgt || item.actBoronHgt) && !(item.actBoronDensity && item.actTitanateDensity);
     });
     return filteredArray;
   })

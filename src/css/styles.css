@@ -256,3 +256,11 @@ input.ng-touched.ng-valid {
   float: left;
   width: 20px;
 }
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}

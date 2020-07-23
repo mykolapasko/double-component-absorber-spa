@@ -122,6 +122,18 @@ function routeConfig ($stateProvider) {
         }]
       }
     })
+    .state('public.density.boron', {
+      views: {
+        '@': {
+          component: 'boronDensity'
+        }
+      },
+      resolve: {
+        item: ['DataService', '$transition$', function (DataService, $transition$) {
+          return DataService.getItem($transition$.params().itemId);
+        }]
+      }
+    })
     .state('public.height', {
       url: '/height',
       component: 'height',

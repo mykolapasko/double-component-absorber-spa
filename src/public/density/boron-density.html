@@ -1,0 +1,50 @@
+<h1>Boron density controll</h1>
+<h4>Current banch: {{$ctrl.currentBanch}}</h4>
+<div class="container">
+  <div class="col-xs-12">
+    <div  class="row-content">
+      <div class="item-weight">
+        <div class="col-sm-2">
+          <h4>clad: {{$ctrl.item.clad}}</h4>
+          <h4>diameterAvg: {{$ctrl.item.diameterAvg}}</h4>
+          <h4>cladDepth: {{$ctrl.item.cladDepth}}</h4>
+        </div>
+        <div class="col-sm-3">
+          <h4>expBoronHgt: {{$ctrl.expBoronHgt}}</h4>
+          <h4>expBoronWgt: {{$ctrl.item.expBoronWgt}}</h4>
+          <h4>expBoronDensity: {{$ctrl.expBoronDensity}}</h4>
+        </div>
+        <div class="col-sm-3">
+          <h4>actBoronHgt: {{$ctrl.item.data.actBoronHgt}}</h4>
+          <h4>actBoronWgt: 
+            <span ng-class="{'red': $ctrl.item.expBoronWgt > $ctrl.item.data.actBoronWgt, 
+            'green': $ctrl.item.expBoronWgt <= $ctrl.item.data.actBoronWgt}">
+            {{$ctrl.item.data.actBoronWgt}}</h4>
+          <h4>actBoronDensity: 
+            <span ng-class="{'red': $ctrl.expBoronDensity > $ctrl.item.data.actBoronDensity, 
+            'green': $ctrl.expBoronDensity <= $ctrl.item.data.actBoronDensity}">
+            {{$ctrl.item.data.actBoronDensity}}</span> </h4>
+        </div>
+        <div class="col-sm-4">
+          <div class="vertical-align">
+             <button class="btn btn-info"
+                ng-click="$ctrl.getActBoronHgt($ctrl.item);">
+                GetHgt
+            </button>
+            <button class="btn btn-success"
+                ng-if="$ctrl.item.data.actBoronHgt"
+                ng-click="$ctrl.getFakeBoronWgt($ctrl.item);">
+                GetWgt
+            </button> 
+            <button class="btn btn-danger"
+                type="button"
+                ng-if="$ctrl.item.data.actBoronDensity"
+                ng-click="$ctrl.putDataAndGoToItems($ctrl.item);">
+                Send
+            </button>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>

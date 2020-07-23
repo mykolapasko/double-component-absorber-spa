@@ -16,25 +16,30 @@
         </div>
         <div class="col-sm-3">
           <h4>actTitanateHgt: {{$ctrl.item.data.actTitanateHgt}}</h4>
-          <h4>actTitanateWgt: {{$ctrl.item.data.actTitanateWgt}}</h4>
-          <h4>actTitanateDensity: {{$ctrl.item.data.actTitanateDensity}} </h4>
+          <h4>actTitanateWgt: 
+            <span ng-class="{'red': $ctrl.item.expTitanateWgt > $ctrl.item.data.actTitanateWgt, 
+            'green': $ctrl.item.expTitanateWgt <= $ctrl.item.data.actTitanateWgt}">
+            {{$ctrl.item.data.actTitanateWgt}}</h4>
+          <h4>actTitanateDensity: 
+            <span ng-class="{'red': $ctrl.expTitanateDensity > $ctrl.item.data.actTitanateDensity, 
+            'green': $ctrl.expTitanateDensity <= $ctrl.item.data.actTitanateDensity}">
+            {{$ctrl.item.data.actTitanateDensity}}</span> </h4>
         </div>
         <div class="col-sm-4">
           <div class="vertical-align">
              <button class="btn btn-info"
                 ng-click="$ctrl.getActTitanateHgt($ctrl.item);">
-                Hight
+                GetHgt
             </button>
             <button class="btn btn-success"
                 ng-if="$ctrl.item.data.actTitanateHgt"
                 ng-click="$ctrl.getFakeTitanateWgt($ctrl.item);">
-                Weight
+                GetWgt
             </button> 
             <button class="btn btn-danger"
                 type="button"
-                ng-if="item.data.actual_absorber_density"
-                ng-disabled="itemForm.$invalid || itemForm.$pending"
-                ng-click="$ctrl.putInfo(item, $index);">
+                ng-if="$ctrl.item.data.actTitanateDensity"
+                ng-click="$ctrl.putDataAndGoToBoron($ctrl.item);">
                 Send
             </button>
           </div>
