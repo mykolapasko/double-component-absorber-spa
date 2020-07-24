@@ -12,8 +12,8 @@ angular.module('public')
 });
 
 //Component controller start
-BoronDetailsComponent.$inject = ['DataService', '$state', 'ButtSpace'];
-function BoronDetailsComponent (DataService, $state, ButtSpace) {
+BoronDetailsComponent.$inject = ['DataService', '$state'];
+function BoronDetailsComponent (DataService, $state) {
 
   this.$onInit = function() {
     this.currentBanch = $state.params.banch;

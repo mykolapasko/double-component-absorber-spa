@@ -30,7 +30,7 @@ function BoronDensityComponentController (DataService, $state, ExpBoronHgt, ExpB
   }
 
   this.getFakeBoronWgt = function(item) {
-    var weight = parseFloat(CalculationService.getRandomArbitrary(item.expBoronWgt - 1.5, item.expBoronWgt + 1.5).toPrecision(4));
+    var weight = parseFloat(CalculationService.getRandomArbitrary(item.expBoronWgt - 0.4, item.expBoronWgt + 1.1).toPrecision(4));
     item.data.actBoronWgt = weight;
     var density = CalculationService.getDensity(item.data.actBoronHgt, item.data.actBoronWgt, item.diameterAvg);
     item.data.actBoronDensity = density;

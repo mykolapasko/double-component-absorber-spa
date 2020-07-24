@@ -34,7 +34,7 @@ function TitanateDensityComponentController (DataService, $state, ExpTitanateHgt
   }
 
   this.getFakeTitanateWgt = function(item) {
-    var weight = parseFloat(CalculationService.getRandomArbitrary(item.expTitanateWgt - 0.5, item.expTitanateWgt + 0.8).toPrecision(3));
+    var weight = parseFloat(CalculationService.getRandomArbitrary(item.expTitanateWgt - 0.4, item.expTitanateWgt + 0.4).toPrecision(3));
     item.data.actTitanateWgt = weight;
     var density = CalculationService.getDensity(item.data.actTitanateHgt, item.data.actTitanateWgt, item.diameterAvg);
     item.data.actTitanateDensity = density;

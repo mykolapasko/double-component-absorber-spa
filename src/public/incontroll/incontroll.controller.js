@@ -23,7 +23,6 @@ function InControllController($scope, DataService, items, $rootScope) {
     postData.banch = inCtrl.banch;
     postData.serial = inCtrl.serial;
     postData.stampAvg = Math.round(((parseFloat(inCtrl.data.diameterOne) + parseFloat(inCtrl.data.diameterTwo))/2).toPrecision(4)*100)/100;
-    console.log(postData);
     var promise = DataService.postInfo(postData)
     .then(function() {
       inCtrl.data = {};
