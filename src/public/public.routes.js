@@ -293,9 +293,8 @@ function routeConfig ($stateProvider) {
         }]
       }
     }).state('public.tip', {
-      url: '/tip',
-      templateUrl: 'public/tip/tip.html',
-      controller: 'TipController as tipCtrl',
+      url: '/tips',
+      component: 'tip',
       resolve: {
         tips: ['DataService', function(DataService) {
           return DataService.getTips();

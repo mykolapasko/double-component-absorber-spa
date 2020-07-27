@@ -5,7 +5,7 @@
 <div class="container">
 	<div class="row-content">
 		<div class="col-sm-5">
-			<h2>Current tip: {{tipCtrl.currentTip}}</h2>
+			<h2>Current tip: {{$ctrl.currentTipId}}</h2>
 			<div class="col-sm-4">
 				<br>
 				<form name="dimensionForm" novalidate>
@@ -13,7 +13,7 @@
 					  <input  placeholder="D 1"
 					  id="focusField" 
 					  class="form-control"
-					  ng-model="tipCtrl.data.diameter_one"
+					  ng-model="$ctrl.data.diameterOne"
 					  type="number"
 					  ng-min="6.82"
 					  ng-max="7.18"
@@ -22,7 +22,7 @@
 					  <br>
 					  <input  placeholder="D 2" 
 					  class="form-control"
-					  ng-model="tipCtrl.data.diameter_two"
+					  ng-model="$ctrl.data.diameterTwo"
 					  type="number"
 					  ng-min="6.82"
 					  ng-max="7.18"
@@ -31,13 +31,13 @@
 					</div>
 					<button  class="btn btn-success"
 							ng-disabled="dimensionForm.$invalid || dimensionForm.$pending" 
-							ng-click="tipCtrl.getWeight();">Weight</button>
+							ng-click="$ctrl.getFakeTipWgt();">Weight</button>
 				</form>
 			</div>
 			<div class="col-sm-5">
-				<h3>D1: {{tipCtrl.data.diameter_one}}</h3>
-				<h3>D2: {{tipCtrl.data.diameter_two}}</h3>
-				<h3>Wgt: {{tipCtrl.data.weight}}</h3>
+				<h3>D1: {{$ctrl.data.diameterOne}}</h3>
+				<h3>D2: {{$ctrl.data.diameterTwo}}</h3>
+				<h3>Wgt: {{$ctrl.data.tipWgt}}</h3>
 			</div>
 		</div>
 	</div>
@@ -46,8 +46,8 @@
 	<div class="row-content">
 		<div class="col-sm-5"></div>
 		<button 
-				ng-disabled="!tipCtrl.data.weight"
+				ng-disabled="!$ctrl.data.tipWgt"
 				class="btn btn-primary"
-				ng-click="tipCtrl.postTipInfo();">Post</button>
+				ng-click="$ctrl.postTipData();">Post</button>
 	</div>
 </div>

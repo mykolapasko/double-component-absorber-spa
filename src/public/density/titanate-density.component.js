@@ -38,7 +38,6 @@ function TitanateDensityComponentController (DataService, $state, ExpTitanateHgt
     item.data.actTitanateWgt = weight;
     var density = CalculationService.getDensity(item.data.actTitanateHgt, item.data.actTitanateWgt, item.diameterAvg);
     item.data.actTitanateDensity = density;
-    console.log(item.data);
   }
 
   this.putDataAndGoToBoron = function(item) {

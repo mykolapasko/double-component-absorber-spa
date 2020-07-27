@@ -247,7 +247,7 @@ service.getItemsToOutControll = function (searchTerm) {
       var container_data = {};
 
       if (!last) {
-        container_data.last = 602;
+        container_data.last = 1;
         container_data.length = 0;
         return container_data;
       } else if (length === 18) {
@@ -467,14 +467,13 @@ service.getDeckAgents = function (deck) {
       method: "GET",
       url:(ApiPath + "/tips")
     }).then(function(response) {
-      console.log(id);
       return response.data.filter(function(item) {
         return item.id === id;
       });
     });
   }
 
-  service.postTipInfo  = function (post_data) {
+  service.postTipData  = function (post_data) {
     var postData = JSON.stringify(post_data);
     return $http({
       method: "POST",
@@ -482,7 +481,7 @@ service.getDeckAgents = function (deck) {
       data: postData,
       headers: {'Content-Type': 'application/json'}
     }).then(function(response) {
-      // Broadcasting object after successful POST request, to update itemlist in "incontroll" state of app!
+      // Broadcasting event after successful POST request, to increment current tip value!
       $rootScope.$broadcast('item_created', response.data);
       console.log("success!");
     }, function(response) {
