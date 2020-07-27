@@ -57,6 +57,34 @@ function routeConfig ($stateProvider) {
         }]
       }
     })
+    .state('public.stamp', {
+      url: '/stamp',
+      component: 'stamp',
+      params: {
+        banch: null,
+        itemId: null
+      }
+    })
+    .state('public.stamp.items', {
+      component: 'stampItems',
+      resolve: {
+        items: ['DataService', '$transition$', function (DataService, $transition$) {
+          return DataService.getItemsToStamp($transition$.params().banch);
+        }]
+      }
+    })
+    .state('public.stamp.details', {
+      views: {
+        '@' : {
+          component: 'stampDetails'
+        }
+      },
+      resolve: {
+        item: ['DataService', '$transition$', function (DataService, $transition$) {
+          return DataService.getItem($transition$.params().itemId);
+        }]
+      }
+    })
     .state('public.weight', {
       url: '/weight',
       component: 'weight',

@@ -84,7 +84,6 @@ function DataService($http, $rootScope, ApiPath) {
 //Stamp start
 
   service.getItemsToStamp = function (banch) {
-    console.log("Stamp service call");
     var response = $http({
       method: "GET",
       url: (ApiPath + "/elements")
