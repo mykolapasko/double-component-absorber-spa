@@ -481,8 +481,6 @@ service.getDeckAgents = function (deck) {
       data: postData,
       headers: {'Content-Type': 'application/json'}
     }).then(function(response) {
-      // Broadcasting event after successful POST request, to increment current tip value!
-      $rootScope.$broadcast('item_created', response.data);
       console.log("success!");
     }, function(response) {
       console.log("failed!");
