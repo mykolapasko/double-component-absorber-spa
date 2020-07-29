@@ -12,33 +12,41 @@ angular.module('public')
 });
 
 //Component controller start
-TipsComponentController.$inject = ['DataService', '$state', 'CalculationService', '$rootScope'];
-function TipsComponentController (DataService, $state, CalculationService, $rootScope) {
+TipsComponentController.$inject = ['DataService', '$state', 'CalculationService'];
+function TipsComponentController (DataService, $state, CalculationService) {
 
-  this.$onInit = function() {
-    if (this.tips.length === 0) {
-      this.currentTipId = 1;
+  var $ctrl = this;
+
+  $ctrl.$onInit = function() {
+    if ($ctrl.tips.length === 0) {
+      $ctrl.currentTipId = 1;
     } else {
-      this.currentTipId = this.tips[0].id + 1;
+      $ctrl.currentTipId = $ctrl.tips[0].id + 1;
     }
-    this.data = {};
+    $ctrl.data = {};
     angular.element("#focusField").focus();
   }
 
-   this.getFakeTipWgt = function() {
+   $ctrl.getFakeTipWgt = function() {
     var weight = parseFloat(CalculationService.getRandomArbitrary(18, 18.5).toPrecision(3));
-    this.data.tipWgt = weight;
+    $ctrl.data.fakeTipWgt = weight;
   }
 
-  this.postTipData = function() {
-    this.data.id = this.currentTipId;
-    this.data.diameterAvg = Math.round(((parseFloat(this.data.diameterOne) + parseFloat(this.data.diameterTwo))/2).toPrecision(4)*100)/100;
-    DataService.postTipData(this.data)
+  $ctrl.postTipData = function() {
+    $ctrl.data.id = $ctrl.currentTipId;
+    $ctrl.data.diameterAvg = Math.round(((parseFloat($ctrl.data.diameterOne) + parseFloat($ctrl.data.diameterTwo))/2).toPrecision(4)*100)/100;
+    DataService.postTipData($ctrl.data)
     .then(function(){
       $state.go('public.tip', null, {reload: 'public.tip'});
     });
   }
 
+  $ctrl.getActualTipWeight = function() {
+    var promise = DataService.getActualTipWeight();
+    promise.then(function(response) {
+      $ctrl.data.tipWgt = response;
+    });
+  }
 }
 
 

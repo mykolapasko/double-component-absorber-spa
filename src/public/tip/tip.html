@@ -4,9 +4,9 @@
 </div>
 <div class="container">
 	<div class="row-content">
-		<div class="col-sm-5">
+		<div class="col-sm-6">
 			<h2>Current tip: {{$ctrl.currentTipId}}</h2>
-			<div class="col-sm-4">
+			<div class="col-sm-5">
 				<br>
 				<form name="dimensionForm" novalidate>
 					<div class="form-group">
@@ -29,15 +29,21 @@
 					  ng-maxlength=4
 					  required>
 					</div>
-					<button  class="btn btn-success"
+					<div class="btn-group" role="group">
+						<button  type="button" class="btn btn-warning"
 							ng-disabled="dimensionForm.$invalid || dimensionForm.$pending" 
-							ng-click="$ctrl.getFakeTipWgt();">Weight</button>
+							ng-click="$ctrl.getFakeTipWgt();">FakeWgt</button>
+						<button  type="button" class="btn btn-danger"
+							ng-disabled="dimensionForm.$invalid || dimensionForm.$pending" 
+							ng-click="$ctrl.getActualTipWeight();">ActualWgt</button>
+					</div>
 				</form>
 			</div>
 			<div class="col-sm-5">
 				<h3>D1: {{$ctrl.data.diameterOne}}</h3>
 				<h3>D2: {{$ctrl.data.diameterTwo}}</h3>
-				<h3>Wgt: {{$ctrl.data.tipWgt}}</h3>
+				<h3>FakeWgt: {{$ctrl.data.fakeTipWgt}}</h3>
+				<h3>ActualWgt: {{$ctrl.data.tipWgt}}</h3>
 			</div>
 		</div>
 	</div>

@@ -28,7 +28,6 @@ function FoundItemsComponentController ($scope, DataService, $rootScope, ExpTita
     item.data.nozzleAvg = Math.round(((parseFloat(item.data.diameterThree) + parseFloat(item.data.diameterFour))/2).toPrecision(4)*100)/100;
     item.data.expBoronWgt = parseFloat((parseFloat(((ExpBoronHgt * ExpBoronDensity * 3.14 * (item.data.diameterAvg * item.data.diameterAvg)/4)/1000).toPrecision(4)) + parseFloat(BoronAdditive)).toPrecision(4));
     item.data.expTitanateWgt = parseFloat((parseFloat(((ExpTitanateHgt * ExpTitanateDensity * 3.14 * (item.data.diameterAvg * item.data.diameterAvg)/4)/1000).toPrecision(3)) + parseFloat(TitanateAdditive)).toPrecision(3));
-    console.log(item.data);
     var promise = DataService.putInfo(item)
     .then($ctrl.remove(index));
   }

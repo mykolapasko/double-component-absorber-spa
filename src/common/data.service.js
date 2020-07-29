@@ -486,6 +486,16 @@ service.getDeckAgents = function (deck) {
       console.log("failed!");
     });
   }
+
+  service.getActualTipWeight = function() {
+    return $http({
+      method: "GET",
+      url: (ApiPath + "/weight")
+    }).then(function (response) {
+      console.log(response);
+      return parseFloat(response.data.slice(2,8));
+    });
+  }
 // Tip finish
 
 }
