@@ -2,7 +2,7 @@
 	<div id="deck" ng-class="{'container-fluid blue-deck': deckCtrl.color === 'blue', 'container-fluid yellow-deck': deckCtrl.color === 'yellow'}">
 		<div  ng-repeat="agent in deckCtrl.agents">
 			<a href="" 
-				ng-click="deckCtrl.getWeightAndPutInfoAfter(agent, $index);" 
+				ng-click="deckCtrl.getFakeWeightAndPutInfoAfter(agent, $index);" 
 				class="col-sm-1 agent-item"
 				ng-mouseover="style={'cursor':'pointer'}"
 				ng-class="{'col-sm-1 agent-item': agent.isEmpty, 'col-sm-1 agent-item-filled': !agent.isEmpty}"
