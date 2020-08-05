@@ -16,6 +16,7 @@ NozzleItemsController.$inject = ['DataService', '$state'];
 function NozzleItemsController (DataService, $state) {
 
   this.$onInit = function() {
+    this.currentBanch = $state.params.banch;
   }
 
   this.goToItemDetails = function(item) {

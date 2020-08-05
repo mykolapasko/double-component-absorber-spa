@@ -34,6 +34,7 @@ function BoronDensityComponentController (DataService, $state, ExpBoronHgt, ExpB
     item.data.actBoronWgt = weight;
     var density = CalculationService.getDensity(item.data.actBoronHgt, item.data.actBoronWgt, item.diameterAvg);
     item.data.actBoronDensity = density;
+    item.data.status = ["ongoing"];
   }
 
   this.putDataAndGoToItems = function(item) {

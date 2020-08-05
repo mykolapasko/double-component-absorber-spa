@@ -16,7 +16,7 @@ StampItemsComponentController.$inject = ['DataService', '$state'];
 function StampItemsComponentController (DataService, $state) {
 
   this.$onInit = function() {
-
+    this.currentBanch = $state.params.banch;
   }
 
   this.goToItemDetails = function(item) {

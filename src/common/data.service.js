@@ -395,7 +395,7 @@ service.getBanchItems = function (banch) {
       url:(ApiPath + "/elements")
     }).then(function(response) {
       var filteredArray = response.data.filter(function(element) {
-        return element.banch === parseInt(banch) && element.status[0] !== 'assembled';
+        return element.banch === parseInt(banch) && element.status[0] !== 'assembled' && element.status[0] === 'ongoing';
       });
       return filteredArray;
     }).then(function(response) {

@@ -38,7 +38,11 @@ function routeConfig ($stateProvider) {
       }
     })
     .state('public.nozzle.items', {
-      component: 'nozzleItems',
+      views: {
+        '@': {
+          component: 'nozzleItems'
+        }
+      },
       resolve: {
         items: ['DataService', '$transition$', function (DataService, $transition$) {
           return DataService.getItemsToNozzle($transition$.params().banch);
@@ -66,7 +70,11 @@ function routeConfig ($stateProvider) {
       }
     })
     .state('public.stamp.items', {
-      component: 'stampItems',
+      views: {
+        '@': {
+          component: 'stampItems'
+        }
+      },
       resolve: {
         items: ['DataService', '$transition$', function (DataService, $transition$) {
           return DataService.getItemsToStamp($transition$.params().banch);
